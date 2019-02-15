@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Change bar theme in mobile browsers -->
+  <!-- Chrome, Firefox and Opera -->
+  <meta name="theme-color" content="#6495ED" />
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#6495ED">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#6495ED">
+
+  <title>Jesse Ragos</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="app.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="chatScreen">
+    <!-- Channel list -->
+    <nav class="navbar navbar-expand-lg navbar-dark primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <!-- <span class="d-block d-lg-none">Jessekiel Ragos</span> -->
+        <span class="d-none d-lg-block">
+          <h1>Chattr</h1>
+        </span>
+        <span class="d-block d-lg-none h1-small">
+          Chattr
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-column" id="navbarSupportedContent">
+
+        <!-- User list -->
+        <div class="accordion mt-2 mb-5" id="accordionExample">
+          <div id="headingOne">
+            <button class="btn accent rounded-circle p-2 mx-2" type="button" data-toggle="collapse"
+              data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <i class="fas fa-users" style="font-size: 1.5em;"></i>
+            </button>
+          </div>
+
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <ul class="list-group text-left">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Morbi leo risus</li>
+              <li class="list-group-item">Porta ac consectetur ac</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+              <li class="list-group-item">Cras justo odio</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="flex-row">Channels</h3>
+
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <button class="btn btn-link">My channel</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-link">My channel</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-link">My channel</button>
+          </li>
+          <li class="mt-5">
+            <button type="button" class="btn accent" data-toggle="modal" data-target="#exampleModal">
+              <i class="fas fa-plus mr-1"></i> Channel
+            </button>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <!-- Add channel form -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add channel</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="#">
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Channel name:</label>
+                <input type="text" class="form-control" id="recipient-name">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-0">
+
+      <section class="app-section d-flex flex-column chatListContainer">
+        <!-- Chat list -->
+        <div class="chatListArea">
+          <ul class="chatList">
+            <!-- {this.props.messages.map((message, index) => ( -->
+            <li key="{index}" class="messageSender">
+              <div><strong>Jesse</strong></div>
+              <div class="chatMessage">
+                <p>Hi, this is a message this is a message</p>
+              </div>
+            </li>
+            <li key="{index}" class="messageYou">
+              <div><strong>You</strong></div>
+              <div class="chatMessage">
+                <p>Ok I read your message. Thanks :)</p>
+              </div>
+            </li>
+
+            <!-- ))} -->
+          </ul>
+        </div>
+
+        <!-- Typing indicator -->
+        <div class="badge badge-pill primary">typing...</div>
+
+        <!-- Send message -->
+        <div class="sendMessageForm">
+          <div>
+            <form class="d-flex">
+              <input type="text" placeholder="Type a message here then hit ENTER" />
+            </form>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
