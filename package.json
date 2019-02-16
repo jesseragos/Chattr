@@ -1,35 +1,19 @@
 {
   "name": "chattr",
-  "version": "0.1.0",
-  "engines": {
-    "node": "10.15.0"
-  },
-  "private": true,
+  "version": "1.0.0",
   "dependencies": {
-    "@pusher/chatkit-client": "^1.0.2",
     "@pusher/chatkit-server": "^1.0.1",
     "body-parser": "^1.18.3",
-    "cors": "^2.8.4",
-    "express": "^4.16.3",
-    "popper.js": "^1.14.7",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1",
-    "resolve-url-loader": "^3.0.0"
+    "express": "^4.16.3"
   },
   "devDependencies": {
-    "bootstrap": "^4.3.0",
-    "bootstrap-loader": "^3.0.2",
-    "concurrently": "^3.5.1",
-    "jquery": "^1.12.4",
-    "tether": "^1.4.5"
+    "concurrently": "^3.5.1"
   },
-  "proxy": "http://localhost:5000",
   "scripts": {
-    "client-install": "npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"react-scripts start\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
+    "client": "cd client && npm start",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   }
 }

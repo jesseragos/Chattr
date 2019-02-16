@@ -1,5 +1,6 @@
 # dependencies
 node_modules/
+client/node_modules/
 
 # errors
 npm-debug.log*
@@ -9,3 +10,4 @@ yarn-error.log*
 public/test_templates/
 package_bkup.json
 package-lock.json
+client/package-lock.json/
