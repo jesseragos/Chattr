@@ -27,7 +27,7 @@ class App extends Component {
 
   registerUserName = userName => {
     fetch(
-      "http://localhost:3001/users",
+      "/users",
       // reqMeta
       {
         method: "POST",
@@ -39,8 +39,7 @@ class App extends Component {
     )
       .then(res => res.json())
       .then(data => {
-        if (data.error)
-          throw new Error(JSON.stringify(data));
+        if (data.error) throw new Error(JSON.stringify(data));
 
         this.connectToChatManager(userName);
       })
@@ -55,7 +54,7 @@ class App extends Component {
       instanceLocator: "v1:us1:ce026d83-5843-4303-9d2c-33e38e01319e",
       userId: userName,
       tokenProvider: new Chatkit.TokenProvider({
-        url: "http://localhost:3001/authenticate"
+        url: "/authenticate"
       })
     });
 

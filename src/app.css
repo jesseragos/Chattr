@@ -7,7 +7,9 @@
 }
 
 #chatScreen {
-  font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   padding-top: 54px;
   color: #868e96;
 }
@@ -29,11 +31,11 @@
 }
 
 .chatListContainer {
-  padding: 0 20px;  
+  padding: 0 20px;
 }
 
 .chatListArea {
-  overflow-Y: auto;
+  overflow-y: auto;
   max-height: 85vh;
   flex: 1;
   padding-top: 5px;
@@ -80,6 +82,11 @@ i.fas.fa-users {
   font-size: 1.5em;
 }
 
+.flexJustifyCenter {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 992px) {
   .chatListArea {
     max-height: 65vh;
@@ -98,7 +105,7 @@ i.fas.fa-users {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;  
+  align-items: center;
   font-weight: 500;
 }
 
@@ -121,15 +128,15 @@ ul.chatList li {
 
 .activeChannel {
   background-color: #00000036;
-} 
-
-.sendMessageForm {
-    padding: 20px;
-    border-top: 1px #b3fd2b solid;
-    margin-bottom: 20px;
 }
 
-.sendMessageForm input[type="text"] { 
+.sendMessageForm {
+  padding: 20px;
+  border-top: 1px #b3fd2b solid;
+  margin-bottom: 20px;
+}
+
+.sendMessageForm input[type="text"] {
   color: inherit;
   background: none;
   outline: none;
@@ -142,35 +149,37 @@ ul.chatList li {
   height: 100vh;
   display: flex;
   /* flex-direction: column; */
-  align-items: center;  
-  justify-content: center;  
+  align-items: center;
+  justify-content: center;
   color: #e4e4e4b2;
 }
 
-.list-group, .navbar-nav {
+.list-group,
+.navbar-nav {
   max-height: 50vh;
-  overflow:auto;  
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 ::-webkit-scrollbar {
-  width: 4px; /* remove scrollbar space */
+  width: 3px; /* remove scrollbar space */
   background: transparent;
 }
-  /* / optional: show position indicator in red */
+/* / optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
   background: #79797944;
 }
 
 #accordionExample {
-  justify-content: flex-end !important; 
+  justify-content: flex-end !important;
 }
 
 .promptJoinChannel {
   font-size: 2rem;
 }
 
-.userFormBorder, .accentBorder {
+.userFormBorder,
+.accentBorder {
   border: 1px #b3fd2b solid;
 }
 
@@ -198,7 +207,9 @@ h4,
 h5,
 h6,
 .h1-small {
-  font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 500;
   text-transform: uppercase;
   color: #ffffff;
@@ -225,7 +236,9 @@ p.lead {
 .subheading {
   text-transform: uppercase;
   font-weight: 500;
-  font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1.5rem;
 }
 
@@ -233,7 +246,8 @@ p.lead {
   color: var(--primary-light-color);
 }
 
-#sideNav .navbar-nav .nav-item .nav-link, .btn-link {
+#sideNav .navbar-nav .nav-item .nav-link,
+.btn-link {
   font-weight: 800;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
@@ -294,7 +308,8 @@ p.lead {
   #sideNav .navbar-collapse .navbar-nav .nav-item {
     display: block;
   }
-  #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link, .btn-link {
+  #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link,
+  .btn-link {
     display: block;
   }
 }
