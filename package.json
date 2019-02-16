@@ -26,12 +26,10 @@
   },
   "proxy": "http://localhost:5000",
   "scripts": {
-    "client-install": "npm install --prefix client",
+    "client-install": "npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "dev-local": "concurrently \"npm run server\" \"react-scripts start\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "dev": "concurrently \"npm run server\" \"react-scripts start\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   }
 }
