@@ -11,3 +11,4 @@ public/test_templates/
 package_bkup.json
 package-lock.json
 client/package-lock.json/
+/.vscode

@@ -19,7 +19,9 @@ class UsernameForm extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    console.log("UsernameForm:24", this.submitAction);
+    this.toggleLoading(true);
+
+    console.log("UsernameForm:24", this.submitAction, e);
 
     this.props.onSubmit(this.submitAction, this.state.username);
   };
@@ -32,16 +34,25 @@ class UsernameForm extends Component {
     this.setState({ username: givenUserName });
   };
 
+  toggleLoading = isShow => {
+    let loadingElem = document.getElementById("loading");
+    if (isShow) {
+      loadingElem.classList.remove("d-none");
+    } else {
+      loadingElem.classList.add("d-none");
+    }
+  };
+
   render() {
     return (
       <div className="primary userForm">
         <div className="userFormContainer">
           <div className="jumbotron bg-transparent userFormBorder">
             <div className="mx-auto">
-              <h1 className="text-center">
-                Chattr
-            </h1>
-              <p className="subtitle mb-4">A simple React and Chatkit application</p>
+              <h1 className="text-center">Chattr</h1>
+              <p className="subtitle mb-4">
+                A simple React and Chatkit application
+              </p>
               <form id="user-form" onSubmit={this.onSubmit}>
                 <div className="form-group">
                   <label htmlFor="userName">Username</label>
@@ -54,7 +65,8 @@ class UsernameForm extends Component {
                     onChange={this.onChange}
                     pattern=".{5,30}"
                     autoFocus
-                    required />
+                    required
+                  />
                 </div>
                 <div className="text-center px-2">
                   <SubmitButton
@@ -70,7 +82,15 @@ class UsernameForm extends Component {
                 </div>
               </form>
             </div>
-            <AlertMessage errorUserAction={this.props.errorUserAction} />
+            <div id="loading" className="text-center mt-3 d-none">
+              <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+            </div>
+            <AlertMessage
+              errorUserAction={this.props.errorUserAction}
+              toggleLoading={this.toggleLoading}
+            />
           </div>
         </div>
       </div>
