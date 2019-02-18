@@ -1,13 +1,10 @@
 import React from "react";
+import LoadingSpinner from "./LoadingSpinner";
 
 class RoomList extends React.Component {
   render() {
     const orderedRooms = [...this.props.rooms].sort((a, b) => a.name > b.name);
-    let channelList = (
-      <div className="d-flex h-100 align-items-center justify-content-center">
-        <div>Loading...</div>
-      </div>
-    );
+    let channelList = <LoadingSpinner />;
 
     if (orderedRooms.length > 0) {
       channelList = (

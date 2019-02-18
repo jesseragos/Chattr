@@ -26,76 +26,79 @@ class ChatScreen extends Component {
     this.state.currentUser
       .isTypingIn({ roomId: this.state.currentRoom.id })
       .catch(error => console.error("error", error));
-  }
+  };
 
-  sendMessage = (text) => {
+  sendMessage = text => {
     this.state.currentUser.sendMessage({
       text,
       roomId: this.state.currentRoom.id
     });
-  }
+  };
 
   componentDidMount() {
     this.getRooms();
   }
 
   getRooms = () => {
-    this.state.currentUser.getJoinableRooms()
+    this.state.currentUser
+      .getJoinableRooms()
       .then(joinableRooms => {
         this.setState({
           joinableRooms,
           joinedRooms: this.state.currentUser.rooms
-        })
+        });
       })
-      .catch(err => console.log('error on joinableRooms: ', err))
-  }
+      .catch(err => console.log("error on joinableRooms: ", err));
+  };
 
-  subscribeToRoom = (roomId) => {
+  subscribeToRoom = roomId => {
     this.setState({ messages: [] });
-    this.state.currentUser.subscribeToRoom({
-      roomId: roomId,
-      messageLimit: 100,
-      hooks: {
-        onMessage: message => {
-          this.setState({
-            messages: [...this.state.messages, message]
-          });
-        },
-        onUserStartedTyping: user => {
-          this.setState({
-            usersWhoAreTyping: [...this.state.usersWhoAreTyping, user.name]
-          });
-        },
-        onUserStoppedTyping: user => {
-          this.setState({
-            usersWhoAreTyping: this.state.usersWhoAreTyping.filter(
-              username => username !== user.name
-            )
-          });
-        },
-        onPresenceChanged: (state, user) => this.forceUpdate(),
-        onUserJoined: () => this.forceUpdate()
-      }
-    })
+    this.state.currentUser
+      .subscribeToRoom({
+        roomId: roomId,
+        messageLimit: 100,
+        hooks: {
+          onMessage: message => {
+            this.setState({
+              messages: [...this.state.messages, message]
+            });
+          },
+          onUserStartedTyping: user => {
+            this.setState({
+              usersWhoAreTyping: [...this.state.usersWhoAreTyping, user.name]
+            });
+          },
+          onUserStoppedTyping: user => {
+            this.setState({
+              usersWhoAreTyping: this.state.usersWhoAreTyping.filter(
+                username => username !== user.name
+              )
+            });
+          },
+          onPresenceChanged: (state, user) => this.forceUpdate(),
+          onUserJoined: () => this.forceUpdate()
+        }
+      })
       .then(room => {
         this.setState({
           roomId: room.id,
           currentRoom: room
-        })
-        this.getRooms()
+        });
+        this.getRooms();
       })
-      .catch(err => console.log('error on subscribing to room: ', err))
-  }
+      .catch(err => console.log("error on subscribing to room: ", err));
+  };
 
-  createRoom = (name) => {
-    this.state.currentUser.createRoom({
-      name
-    })
-      .then(room => {
-        this.subscribeToRoom(room.id)
+  createRoom = name => {
+    this.state.currentUser
+      .createRoom({
+        name
       })
-      .catch(err => console.log('error with createRoom: ', err))
-  }
+      .then(room => {
+        this.subscribeToRoom(room.id);
+      })
+      .catch(err => console.log("error with createRoom: ", err));
+  };
 
   render() {
     return (
@@ -116,7 +119,6 @@ class ChatScreen extends Component {
         <NewRoomForm createRoom={this.createRoom} />
 
         <div className="p-0">
-
           <section className="app-section d-flex flex-column chatListContainer">
             {/* <!-- Chat list --> */}
             <MessageList
@@ -134,7 +136,6 @@ class ChatScreen extends Component {
               onChange={this.sendTypingEvent}
             />
           </section>
-
         </div>
       </div>
     );

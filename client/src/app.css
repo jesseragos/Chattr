@@ -67,6 +67,10 @@ li.messageYou div.chatMessage {
   color: #0000008f;
 }
 
+a.navbar-brand.js-scroll-trigger {
+  margin-right: 0;
+}
+
 .userOnlineIndicator {
   border-radius: 50%;
   width: 11px;

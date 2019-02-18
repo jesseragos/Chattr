@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SubmitButton from "./SubmitButton";
 import AlertMessage from "./AlertMessage";
+import LoadingSpinner from "./LoadingSpinner";
 
 class UsernameForm extends Component {
   constructor(props) {
@@ -82,11 +83,7 @@ class UsernameForm extends Component {
                 </div>
               </form>
             </div>
-            <div id="loading" className="text-center mt-3 d-none">
-              <div className="spinner-border" role="status">
-                <span className="sr-only">Loading...</span>
-              </div>
-            </div>
+            <LoadingSpinner />
             <AlertMessage
               errorUserAction={this.props.errorUserAction}
               toggleLoading={this.toggleLoading}

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class WhosOnlineList extends Component {
   renderUsers() {
     return (
-      <div className="accordion mt-2 mb-5" id="accordionExample">
+      <div className="accordion mt-2 mb-4" id="accordionExample">
         <div id="headingOne flexJustifyCenter">
           <button
             className="btn accent rounded-circle p-2 mx-2 mt-2"
